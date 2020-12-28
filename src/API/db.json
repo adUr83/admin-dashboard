@@ -1,0 +1,80 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Adem",
+      "lastName": "Ure",
+      "email": "adem@mail.com",
+      "password": "1234",
+      "userName": "ademure"
+    },
+    {
+      "id": 2,
+      "firstName": "Mustafa",
+      "lastName": "Yilmaz",
+      "email": "mustafa@mail.com",
+      "password": "1717",
+      "userName": "kite"
+    },
+    {
+      "userName": "fdadfa",
+      "password": "12343",
+      "firstName": "fdsFASFA",
+      "lastName": "FAFDASFA",
+      "email": "adem_ure@hotmail.com",
+      "id": 3
+    }
+  ],
+  "students": [
+    {
+      "firstName": "Nuran",
+      "lastName": "Ozlem",
+      "age": 44,
+      "id": 44
+    },
+    {
+      "firstName": "Semra bbb",
+      "lastName": "Sam",
+      "age": 45,
+      "id": 43
+    },
+    {
+      "firstName": "Adem",
+      "lastName": "Ure",
+      "age": 35,
+      "id": 45
+    },
+    {
+      "firstName": "Kezban",
+      "lastName": "Kez",
+      "age": 36,
+      "id": 46
+    }
+  ],
+  "teachers": [
+    {
+      "id": 4,
+      "firstName": "Ali",
+      "lastName": "Oktay",
+      "age": 23
+    },
+    {
+      "firstName": "Salih",
+      "lastName": "ozel",
+      "age": 33,
+      "id": 10
+    },
+    {
+      "firstName": "Fatma",
+      "lastName": "Oz",
+      "age": 44,
+      "id": 44
+    },
+    {
+      "firstName": "Adem",
+      "lastName": "Ure",
+      "age": 35,
+      "id": 22
+    }
+  ]
+}

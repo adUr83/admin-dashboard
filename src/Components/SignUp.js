@@ -1,3 +1,4 @@
+
 import React from 'react'
 import{ InputGroup,Row ,Col,Button}from 'react-bootstrap'
 import FormControl from 'react-bootstrap/FormControl'
@@ -6,41 +7,21 @@ import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 
-export default function Login() {
+export default function SignUp() {
 let history = useHistory();
 
     return (
         <Formik
-       initialValues={{ userName: '', password: '' }}
+       initialValues={{ userName: '', password: '',firstName:'',lastName:'',email:'' }}
       
        onSubmit={(values) => {
     
 console.log(values);  // veriler valuesin icinde
 
+values.id= 3
+axios.post('http://localhost:3000/users',values).then((res)=>{
 
-axios.get('http://localhost:3000/users').then((res)=>{
 
-let data =res.data
-console.log(data);
-
-let isFind = false
-for(let i=0;i < data.length;i++) {
-    if(values.userName ===data[i].userName && values.password === data[i].password){
-       isFind = true
-       localStorage.setItem("crntUser",JSON.stringify(data[i]));
-       
-       history.push("/home")
-    }
-
-}   
-if( isFind === false) {
-    Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'user name or password incorrect!',
-       
-      })
-}
 
 
 
@@ -65,7 +46,7 @@ if( isFind === false) {
        }) => (
         
      <div style={{display:'flex',flex:1,justifyContent:'center',alignItems:'center',flexDirection:"column"}}>
-      Login Page....
+      Sign Up Page...
            <Row>
                <Col md={12} className="mt-3">
   <InputGroup className="mb-3">
@@ -104,8 +85,69 @@ onChange={handleChange}
   </InputGroup>
   </Col>
   </Row>
-  <Button onClick={ handleSubmit} variant="warning">Login   </Button>
-  <Button className="mt-3" onClick={ ()=>{history.push("/signUp")}} variant="success">Sign Up   </Button>
+
+  <Row>
+               <Col md={12}>
+  <InputGroup className="mb-3">
+    <InputGroup.Prepend>
+      <InputGroup.Text id="basic-addon1"> First Name</InputGroup.Text>
+    </InputGroup.Prepend>
+    <FormControl 
+    name="firstName"
+    value={values.firstName}
+onChange={handleChange}
+
+
+      placeholder="First name"
+      aria-label="First name"
+      aria-describedby="basic-addon1"
+    />
+  </InputGroup>
+  </Col>
+  </Row>
+
+  <Row>
+               <Col md={12}>
+  <InputGroup className="mb-3">
+    <InputGroup.Prepend>
+      <InputGroup.Text id="basic-addon1"> Last Name</InputGroup.Text>
+    </InputGroup.Prepend>
+    <FormControl 
+    name="lastName"
+    value={values.lastName}
+onChange={handleChange}
+
+
+      placeholder="Last name"
+      aria-label="Last name"
+      aria-describedby="basic-addon1"
+    />
+  </InputGroup>
+  </Col>
+  </Row>
+
+
+  <Row>
+               <Col md={12}>
+  <InputGroup className="mb-3">
+    <InputGroup.Prepend>
+      <InputGroup.Text id="basic-addon1"> E-mail</InputGroup.Text>
+    </InputGroup.Prepend>
+    <FormControl 
+    name="email"
+    value={values.email}
+onChange={handleChange}
+
+type="email"
+      placeholder="e-mail"
+      aria-label="e-mail"
+      aria-describedby="basic-addon1"
+    />
+  </InputGroup>
+  </Col>
+  </Row>
+  <Button onClick={ handleSubmit} variant="warning">Sign Up   </Button>
+  <Button className="mt-3" onClick={ ()=>{history.push("/login")}} variant="success"> Login  </Button>
   </div> 
 
 
