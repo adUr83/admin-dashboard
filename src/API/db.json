@@ -76,5 +76,14 @@
       "age": 35,
       "id": 22
     }
+  ],
+  "educations": [
+    {
+      "name": "React",
+      "des": "Redux",
+      "startDate": "2020-12-27T23:00:00.000Z",
+      "endDate": "2020-12-30T23:00:00.000Z",
+      "id": 1
+    }
   ]
 }
